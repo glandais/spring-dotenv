@@ -16,6 +16,9 @@ public class DemoApplication implements ApplicationRunner {
   @Value("${example.name}")
   String name;
 
+  @Value("${hello.value}")
+  String name2;
+
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
   }
@@ -23,5 +26,6 @@ public class DemoApplication implements ApplicationRunner {
   @Override
   public void run(ApplicationArguments args) {
     logger.info("Hello, {}", name);
+    logger.info("Hello2, {}", name2);
   }
 }

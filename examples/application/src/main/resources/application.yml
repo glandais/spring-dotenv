@@ -4,8 +4,8 @@
 #  ignoreIfMalformed: true
 #  ignoreIfMissing: false
 #  systemProperties: true
-  directory: "./some/path"
+#  directory: "./some/path"
   prefix: ""
 
-example:
-  name: ${EXAMPLE_NAME:World}
+hello:
+  value: ${EXAMPLE_NAME2}

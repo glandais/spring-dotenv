@@ -21,6 +21,12 @@ class DotenvPropertySourceTest {
   @Test
   void valueFromDotenv() {
     assertThat(source.getProperty("env.EXAMPLE_MESSAGE_1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("env.example.message.1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("env.example-message-1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("env.example.message-1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("env.EXAMPLE.MESSAGE.1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("env.EXAMPLE-MESSAGE-1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("env.EXAMPLE.MESSAGE-1")).isEqualTo("Message 1 from .env");
   }
 
   @Test

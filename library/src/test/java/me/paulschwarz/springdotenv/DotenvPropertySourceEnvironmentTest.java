@@ -32,6 +32,12 @@ class DotenvPropertySourceEnvironmentTest {
   @Test
   void valueFromDotenv() {
     assertThat(source.getProperty("EXAMPLE_MESSAGE_1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("example.message.1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("example-message-1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("example.message-1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("EXAMPLE.MESSAGE.1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("EXAMPLE-MESSAGE-1")).isEqualTo("Message 1 from .env");
+    assertThat(source.getProperty("EXAMPLE.MESSAGE-1")).isEqualTo("Message 1 from .env");
   }
 
   @Test
@@ -49,8 +55,4 @@ class DotenvPropertySourceEnvironmentTest {
     assertThat(source.getProperty("EXAMPLE_MESSAGE_3")).isEqualTo("Message 3 from system environment");
   }
 
-  @Test
-  void valueFromDotEnv() {
-    assertThat(source.getProperty("EXAMPLE_MESSAGE_3")).isEqualTo("Message 3 from system environment");
-  }
 }

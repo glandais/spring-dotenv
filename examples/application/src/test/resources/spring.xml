@@ -14,4 +14,8 @@
   <bean id="value3" class="java.lang.String">
     <constructor-arg value="${example.value3}" />
   </bean>
+
+  <bean id="value4" class="java.lang.String">
+    <constructor-arg value="${example.value4}" />
+  </bean>
 </beans>

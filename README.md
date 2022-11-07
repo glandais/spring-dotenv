@@ -47,29 +47,11 @@ Spring provides different ways to read properties. This example uses the `@Value
 String name;
 ```
 
-With Spring, you may provide properties in a .properties file or a .yml file.
+With Spring, you may provide properties in a .properties file or a .yml file. But if you are used to environment variables, variables are extracted with relaxed binding rules ([documentation](https://docs.spring.io/spring-boot/docs/2.7.5/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding.environment-variables)).
 
-Notice the reference to `env` here. This is the property source which invokes the dotenv library to load values from the environment and .env file.
+`spring-dotenv` will use the same relaxed binding rules, so you don't have to care if environment variable is given by .env or a real environment variable.
 
-Add to application.yml
-
-```yaml
-example:
-  name: ${env.EXAMPLE_NAME}
-```
-
-or with a default value of "World"
-
-```yaml
-example:
-  name: ${env.EXAMPLE_NAME:World}
-```
-
-And of course, a .properties file works too
-
-```properties
-example.name = ${env.EXAMPLE_NAME}
-```
+For this to work, it is required to set `prefix` to an empty String.
 
 At this point, we've told Spring to load the value `example.name` from the environment. It must be supplied, otherwise you will get an exception.
 

@@ -10,11 +10,13 @@ public class FromWiredBean {
   String value1;
   String value2;
   String value3;
+  String value4;
 
-  public FromWiredBean(String value1, String value2, String value3) {
+  public FromWiredBean(String value1, String value2, String value3, String value4) {
     this.value1 = value1;
     this.value2 = value2;
     this.value3 = value3;
+    this.value4 = value4;
   }
 
   public String getValue1() {
@@ -27,5 +29,9 @@ public class FromWiredBean {
 
   public String getValue3() {
     return value3;
+  }
+
+  public String getValue4() {
+    return value4;
   }
 }

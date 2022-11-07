@@ -15,6 +15,9 @@ public class FromValueAnnotation {
   @Value("${example.value3}")
   String value3;
 
+  @Value("${example.value4}")
+  String value4;
+
   @Value("${EXAMPLE_MESSAGE_1}")
   String value1v2;
 
@@ -23,6 +26,9 @@ public class FromValueAnnotation {
 
   @Value("${EXAMPLE_MESSAGE_3}")
   String value3v2;
+
+  @Value("${example-value4}")
+  String value4v2;
 
   public String getValue1() {
     return value1;
@@ -36,9 +42,17 @@ public class FromValueAnnotation {
     return value3;
   }
 
+  public String getValue4() {
+    return value4;
+  }
+
   public String getValue1v2() { return value1v2; }
 
   public String getValue2v2() { return value2v2; }
 
   public String getValue3v2() { return value3v2; }
+
+  public String getValue4v2() {
+    return value4v2;
+  }
 }

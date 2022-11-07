@@ -26,9 +26,11 @@ class DemoApplicationTest {
     assertThat(fromValueAnnotation.getValue1()).isEqualTo("Message 1 from .env");
     assertThat(fromValueAnnotation.getValue2()).isEqualTo("Message 2 from system environment");
     assertThat(fromValueAnnotation.getValue3()).isEqualTo("Message 3 from system environment");
+    assertThat(fromValueAnnotation.getValue4()).isEqualTo("Message 4 from .env");
     assertThat(fromValueAnnotation.getValue1v2()).isEqualTo("Message 1 from .env");
     assertThat(fromValueAnnotation.getValue2v2()).isEqualTo("Message 2 from system environment");
     assertThat(fromValueAnnotation.getValue3v2()).isEqualTo("Message 3 from system environment");
+    assertThat(fromValueAnnotation.getValue4v2()).isEqualTo("Message 4 from .env");
   }
 
   @Test
@@ -36,6 +38,7 @@ class DemoApplicationTest {
     assertThat(fromProperties.getValue1()).isEqualTo("Message 1 from .env");
     assertThat(fromProperties.getValue2()).isEqualTo("Message 2 from system environment");
     assertThat(fromProperties.getValue3()).isEqualTo("Message 3 from system environment");
+    assertThat(fromProperties.getValue4()).isEqualTo("Message 4 from .env");
   }
 
   @Test
@@ -43,5 +46,6 @@ class DemoApplicationTest {
     assertThat(fromWiredBean.getValue1()).isEqualTo("Message 1 from .env");
     assertThat(fromWiredBean.getValue2()).isEqualTo("Message 2 from system environment");
     assertThat(fromWiredBean.getValue3()).isEqualTo("Message 3 from system environment");
+    assertThat(fromWiredBean.getValue4()).isEqualTo("Message 4 from .env");
   }
 }
